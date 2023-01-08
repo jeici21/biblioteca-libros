@@ -12,6 +12,39 @@ export default function Create() {
     const [review, setReview] = useState("");
     const store = useAppContext();
     const navigate = useNavigate();
+    const inputStyles = {
+        formContainer: {
+            width: "400px",
+            margin: "0 auto"
+        },
+        container: {
+            display: "flex",
+            flexDirection: "column",
+            gap: "5px",
+            margin: "15px 0"
+        },
+        title: {
+            fontSize: "16px",
+            textAlign: "left",
+            color: "white"
+        },
+        input: {
+            padding: "10px",
+            borderRadius: "5px",
+            fontSize: "16px"
+        }
+    };
+
+    const buttonStyle = {
+        padding: "15px 20px",
+        minWidth: "200px",
+        border: "none",
+        borderRadius: "5px",
+        backgroundColor: "#1e9638",
+        color: "white",
+        fontWeight: "bolder",
+        fontSize: "18px"
+    };
 
     const handleChange = (e) => {
         const name = e.target.name;
@@ -59,35 +92,41 @@ export default function Create() {
 
     return (
         <Layout>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <div>Title</div>
-                    <input type="text" name='title' onChange={handleChange} value={title} />
+            <form onSubmit={handleSubmit} style={inputStyles.formContainer}>
+                <div style={inputStyles.container}>
+                    <div style={inputStyles.title}>Title</div>
+                    <input type="text" name='title' onChange={handleChange}
+                        value={title} style={inputStyles.input} />
                 </div>
-                <div>
-                    <div>Author</div>
-                    <input type="text" name='author' onChange={handleChange} value={author} />
+                <div style={inputStyles.container}>
+                    <div style={inputStyles.title}>Author</div>
+                    <input type="text" name='author' onChange={handleChange}
+                        value={author} style={inputStyles.input} />
                 </div>
-                <div>
-                    <div>Cover</div>
-                    <input type="file" name='cover' onChange={handleOnChangeFile} />
+                <div style={inputStyles.container}>
+                    <div style={inputStyles.title}>Cover</div>
+                    <input type="file" name='cover' onChange={handleOnChangeFile}
+                        style={inputStyles.input} />
                     <div>
                         {!!cover ? <img src={cover} width="200" alt='preview' /> : ""}
                     </div>{/*si hay imagen disponible la publicará*/}
                 </div>
-                <div>
-                    <div>Introduction</div>
-                    <input type="text" name='intro' onChange={handleChange} value={intro} />
+                <div style={inputStyles.container}>
+                    <div style={inputStyles.title}>Introduction</div>
+                    <input type="text" name='intro' onChange={handleChange}
+                        value={intro} style={inputStyles.input} />
                 </div>
-                <div>
-                    <div>Completed</div>
-                    <input type="checkbox" name='completed' onChange={handleChange} value={completed} />
+                <div style={inputStyles.container}>
+                    <div style={inputStyles.title}>Completed</div>
+                    <input type="checkbox" name='completed' onChange={handleChange}
+                        value={completed} style={inputStyles.input} />
                 </div>
-                <div>
-                    <div>Review</div>
-                    <input type="text" name='review' onChange={handleChange} value={review} />
+                <div style={inputStyles.container}>
+                    <div style={inputStyles.title}>Review</div>
+                    <input type="text" name='review' onChange={handleChange}
+                        value={review} style={inputStyles.input} />
                 </div>
-                <input type="submit" value="Register book" />
+                <input type="submit" value="Register book" style={buttonStyle} />
             </form>
         </Layout>
     );
