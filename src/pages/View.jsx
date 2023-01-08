@@ -10,6 +10,7 @@ export default function View() {
     useEffect(() => {
         const book = store.getItem(params.bookId);
         setItem(book);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);//mostrando todos los items
 
     const itemStyles = {
