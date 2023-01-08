@@ -16,7 +16,7 @@ export default function View() {
         container: {
             display: "flex",
             gap: "20px",
-            color: "white",
+            color: "var(--body-color)",
             width: "800px",
             margin: "0 auto"
         }
@@ -28,6 +28,7 @@ export default function View() {
 
     return (
         <Layout>
+            <h1>Información sobre el libro</h1>
             <div style={itemStyles.container}>
                 <div>
                     <div>{item?.cover ? <img src={item?.cover} width="400" alt="cover" /> : ""}</div>

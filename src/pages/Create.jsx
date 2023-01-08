@@ -14,7 +14,7 @@ export default function Create() {
     const navigate = useNavigate();
     const inputStyles = {
         formContainer: {
-            width: "400px",
+            width: "100%",
             margin: "0 auto"
         },
         container: {
@@ -26,12 +26,13 @@ export default function Create() {
         title: {
             fontSize: "16px",
             textAlign: "left",
-            color: "white"
+            color: "var(--body-color)"
         },
         input: {
             padding: "10px",
             borderRadius: "5px",
-            fontSize: "16px"
+            fontSize: "16px",
+            fontFamily: "Samsung Sans Regular"
         }
     };
 
@@ -43,7 +44,8 @@ export default function Create() {
         backgroundColor: "#1e9638",
         color: "white",
         fontWeight: "bolder",
-        fontSize: "18px"
+        fontSize: "18px",
+        fontFamily: "Samsung Sans Regular"
     };
 
     const handleChange = (e) => {
@@ -92,6 +94,7 @@ export default function Create() {
 
     return (
         <Layout>
+            <h1>Registrar nuevo libro</h1>
             <form onSubmit={handleSubmit} style={inputStyles.formContainer}>
                 <div style={inputStyles.container}>
                     <div style={inputStyles.title}>Title</div>

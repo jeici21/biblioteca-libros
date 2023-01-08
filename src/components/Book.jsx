@@ -11,7 +11,7 @@ export default function Book({ item }) {
         flexDirection: "column",
         alignItems: "center",
         textAlign: "center",
-        color: "white",
+        color: "var(--body-color)",
         textDecoration: "none"
     };
 

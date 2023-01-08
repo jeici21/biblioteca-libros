@@ -12,6 +12,7 @@ export default function Index() {
 
     return (
         <Layout>
+            <h1>Biblioteca de Libros</h1>
             <div style={booksContainer}>
                 {store.items.map((item) => (
                     <Book key={item.id} item={item} />))}
