@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useAppContext } from '../store/Store';
+import { Link } from "react-router-dom";
 
 export default function Create() {
     const [title, setTitle] = useState("");
@@ -7,6 +9,7 @@ export default function Create() {
     const [intro, setIntro] = useState("");
     const [completed, setCompleted] = useState(false);
     const [review, setReview] = useState("");
+    const store = useAppContext();
 
     const handleChange = (e) => {
         const name = e.target.name;
@@ -47,10 +50,13 @@ export default function Create() {
         const newBook = {
             id: crypto.randomUUID(), title, author, cover, intro, completed, review
         };
+        //TODO: mandar a registrar libro
+        store.createItem(newBook);
     }
 
     return (
         <div>
+            <Link to="/">Home</Link>{/*enlace a home*/}
             <form onSubmit={handleSubmit}>
                 <div>
                     <div>Title</div>
